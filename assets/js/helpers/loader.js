@@ -1,13 +1,13 @@
 const greetings = [
 	'¡Hola!',
 	'Hello!',
-	'Labas!', // Lituano
+	'Labas!',
 	'Bonjour!',
 	'Hallo!',
 	'Ciao!',
-	'こんにちは!', // Japonés
-	'Sveiki!', // Letonia
-	'Tere!', // Estonia
+	'こんにちは!',
+	'Sveiki!',
+	'Tere!',
 ];
 
 window.onload = function () {
@@ -16,32 +16,30 @@ window.onload = function () {
 
 	function showGreeting() {
 		if (index < greetings.length) {
-			greetingContainer.textContent = greetings[index]; // Muestra el saludo
-			greetingContainer.classList.add('show'); // Agrega la clase para mostrar el saludo
+			greetingContainer.textContent = greetings[index];
+			greetingContainer.classList.add('show');
 
-			// Duración de la visualización
 			const displayTime =
-				index === 0 || index === greetings.length - 1 ? 700 : 200; // 1 segundo para el primer y último saludo, 0.5 segundos para los demás
+				index === 0 || index === greetings.length - 1 ? 700 : 200;
 
 			setTimeout(() => {
-				greetingContainer.classList.remove('show'); // Remueve la clase para ocultar el saludo
-
-				// Espera un breve tiempo antes de mostrar el siguiente saludo
+				greetingContainer.classList.remove('show');
 				setTimeout(() => {
-					index++; // Incrementa el índice para el siguiente saludo
-					showGreeting(); // Muestra el siguiente saludo
-				}, 200); // Tiempo de espera antes de mostrar el siguiente saludo
-			}, displayTime); // Tiempo que el saludo permanece visible
+					index++;
+					showGreeting();
+				}, 10);
+			}, displayTime);
 		} else {
-			// Oculta el loader después de mostrar todos los saludos
 			const loader = document.querySelector('.loader');
-			loader.classList.add('loader--hidden');
+			loader.classList.add('loader--hidden'); // Ocultar solo el loader
 
-			// Alfin muestra el carousel
+			// Añadir la clase 'visible' al carrusel para que sea visible
 			const carousel = document.querySelector('.carousel');
-			carousel.classList.add('visible');
+			if (carousel) {
+				carousel.classList.add('visible');
+			}
 		}
 	}
 
-	showGreeting(); // Inicia el ciclo
+	showGreeting();
 };

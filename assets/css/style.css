@@ -796,11 +796,11 @@ svg path:hover {
 	margin-top: -50px;
 	overflow: hidden;
 	position: relative;
-	display: none;
-}
-.carousel.visible {
 	display: block;
 }
+/* .carousel.visible {
+	opacity: 1;
+} */
 /* .loader--hidden + .carousel {
 	display: block;
 } */
