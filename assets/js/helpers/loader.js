@@ -31,7 +31,7 @@ window.onload = function () {
 			}, displayTime);
 		} else {
 			const loader = document.querySelector('.loader');
-			loader.classList.add('loader--hidden'); // Ocultar solo el loader
+			loader.classList.add('loader--hidden');
 
 			// Añadir la clase 'visible' al carrusel para que sea visible
 			const carousel = document.querySelector('.carousel');
