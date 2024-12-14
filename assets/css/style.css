@@ -798,12 +798,13 @@ svg path:hover {
 	position: relative;
 	display: block;
 }
-/* .carousel.visible {
-	opacity: 1;
-} */
-/* .loader--hidden + .carousel {
-	display: block;
-} */
+
+@media (max-width: 320px) {
+	.carousel {
+		height: auto;
+	}
+}
+
 .carousel .list .item {
 	width: 180px;
 	height: 250px;
@@ -866,7 +867,9 @@ svg path:hover {
 }
 
 .content .title {
-	font-size: 100px;
+	background-color: var(--blue-scroll);
+	text-align: center;
+	font-size: 60px;
 	text-transform: uppercase;
 	color: #14ff72cb;
 	font-weight: bold;
@@ -875,10 +878,22 @@ svg path:hover {
 	opacity: 0;
 	animation: animate 1s ease-in-out 0.3s 1 forwards;
 }
+.content .title::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-image: inherit;
+	filter: blur(8px);
+	z-index: -1;
+}
 
 .content .name {
-	font-size: 100px;
-	text-transform: uppercase;
+	background-color: #fffffff7;
+	color: #000000;
+	font-size: 40px;
 	font-weight: bold;
 	line-height: 1;
 	text-shadow: 3px 4px 4px rgba(255, 255, 255, 0.8);
@@ -888,6 +903,8 @@ svg path:hover {
 }
 
 .content .des {
+	background-color: #14ff72ea;
+	color: black;
 	margin-top: 10px;
 	margin-bottom: 20px;
 	font-size: 18px;
@@ -938,7 +955,7 @@ svg path:hover {
 }
 
 .btn1 button:hover {
-	color: orange; /* Cambia el color al pasar el mouse */
+	color: orange;
 }
 @keyframes animate {
 	from {
@@ -957,6 +974,7 @@ svg path:hover {
 /* LETSTALK */
 .lets-talk-button a {
 	background-color: transparent;
+	background-color: var(--blue-scroll);
 	border: none;
 	color: #14ff72;
 	font-size: 20px;
@@ -967,8 +985,7 @@ svg path:hover {
 }
 
 .lets-talk-button a:hover {
-	animation: bounce 0.5s; /* Efecto de rebote al pasar el mouse */
-	/* animation: step-start; */
+	animation: bounce 0.5s;
 }
 
 @keyframes bounce {
